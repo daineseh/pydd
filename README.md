@@ -16,7 +16,11 @@
     <arg2>:            Set the output destination.
     /path/to/file      # Output to a file.
 
-    <arg3>:            Set the blocksize. (in bytes only: Default 4096000)
+    <arg3>:            Set the blocksize. (Default 1MB)
+    256, 512           # bytes presentation
+    16k or 32kb        # kilobytes presentation
+    64M or 128MB       # megabytes presentation
+    ...
 
     --help:            Show this help screen.
 
