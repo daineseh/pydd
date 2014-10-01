@@ -173,7 +173,7 @@ def main():
 
     src = sys.argv[1]
     src_fp = open(src, 'r')
-    src_size = float(os.stat(src).st_size)
+    src_size = os.path.getsize(src)
 
     dst = sys.argv[2]
     dst_fp = open(dst, 'w+')
