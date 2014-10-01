@@ -195,9 +195,12 @@ def main():
             buff = src_fp.read(bs)
             print format(total_size / src_size, '.2%')
         print "Done!"
-    except KeyboardInterrupt:
-        print
-        sys.exit(1)
+    except KeyboardInterrupt, e:
+        print e
+        return
+    except IOError, e:
+        print e
+        return
 
 if __name__ == '__main__':
 #     sys.argv.extend(['SOURCE', 'DESTINATION', 'BITRATE])
