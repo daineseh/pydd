@@ -172,7 +172,12 @@ def main():
         usage()
 
     src = sys.argv[1]
-    src_fp = open(src, 'r')
+
+    try:
+        src_fp = open(src, 'r')
+    except IOError, e:
+        print e
+        return
     src_size = os.path.getsize(src)
 
     dst = sys.argv[2]
