@@ -1,5 +1,6 @@
 #!/usr/bin/env python2.7
 
+from __future__ import print_function
 import os
 import re
 import sys
@@ -22,7 +23,7 @@ Arguments:
 
     --help :           Show this help screen.
     '''
-    print msg
+    print(msg)
 
 def human_readable_size_converter(bytes_size):
     kbyte = 1024
@@ -176,7 +177,7 @@ def main():
     try:
         src_fp = open(src, 'r')
     except IOError, e:
-        print e
+        print(e)
         return
     src_size = os.path.getsize(src)
 
@@ -198,13 +199,13 @@ def main():
             dst_fp.write(buff)
             total_size += len(buff)
             buff = src_fp.read(bs)
-            print format(total_size / src_size, '.2%')
-        print "Done!"
+            print('Progress: ' + format(total_size / src_size, '.2%'), end='\r')
+        print("\nDone!")
     except KeyboardInterrupt, e:
-        print e
+        print(e)
         return
     except IOError, e:
-        print e
+        print(e)
         return
 
 if __name__ == '__main__':
