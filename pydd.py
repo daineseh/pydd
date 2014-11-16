@@ -182,7 +182,11 @@ def main():
     src_size = os.path.getsize(src)
 
     dst = sys.argv[2]
-    dst_fp = open(dst, 'w+')
+    try:
+        dst_fp = open(dst, 'w+')
+    except IOError, e:
+        print(e)
+        return
 
     bs_obj = BS()
     if len(sys.argv) == 4:
